@@ -13,7 +13,7 @@ from resources.model.pages.search_result_page import SearchResultPage
 mysql_helper = MySqlHelper()
 chrome_options = Options()
 chrome_options.add_argument("user-agent=Chrome/67.0.3396.99")
-chrome_options.add_argument('--headless')
+#chrome_options.add_argument('--headless')
 chrome_options.add_argument('--no-sandbox')
 chrome_options.add_argument('--disable-dev-shm-usage')
 chrome_options.add_argument('--blink-settings=imagesEnabled=false')  # change to false

@@ -9,7 +9,7 @@ class SearchResultObjRep(ObjectRepository):
     photo_link_xpath = '//h2[div]/following-sibling::div//a'
     likes_link_xpath = '//a[text() = " likes"]'
     first_user_li_xpath = '//div[div[text() = "Likes"]]//li[1]'
-    follow_button_xpath = '(//div[div[text() = "Likes"]]//button[text() = "Follow"])'
+    follow_button_xpath = '//div[div[text() = "Likes"]]//button[text() = "Follow"]'
     follow_user_xpath = '/../../div/a'
     like_button_xpath = '//span[@aria-label="Like"]'
     comment_area_xpath = '//textarea[@aria-label="Add a comment…"]'
