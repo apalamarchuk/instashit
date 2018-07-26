@@ -25,4 +25,4 @@ class SearchResultPage(BasePage):
             mysql_helper.add_to_following_list(name)
             if i % 5 == 0:
                 self.driver.switch_to.active_element.send_keys(Keys.PAGE_DOWN)
-                sleep(3)
+                sleep(5)
