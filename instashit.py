@@ -36,7 +36,7 @@ login_page = LoginPage(driver).login("arthur_super", "tararam123")
 #driver.refresh()
 #followers_list = profile_page.get_followers_list(mysql_helper)
 
-FeedPage(driver, "follow4follow").goto_search_result_page()
+FeedPage(driver, "followback").goto_search_result_page()
 result_page = SearchResultPage(driver)
 result_page.following(mysql_helper, "F4F??!")
 
