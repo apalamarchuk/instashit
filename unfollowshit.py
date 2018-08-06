@@ -50,7 +50,7 @@ if following_number > 200:
             print("Can't unfollow shit")
             print("Len is " + str(len(following_list)))
             driver.quit()
-            exit(1)
+            exit()
         following_list.remove(link)
 
     print("Done")
