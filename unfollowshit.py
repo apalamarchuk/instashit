@@ -38,6 +38,7 @@ print(following_list)
 
 if following_number > 200:
     for link in following_list:
+        print("Len is " + str(len(following_list)))
         driver.get(link)
         sleep(1)
         driver.find_element_by_xpath('//button[text()="Following"]').click()
