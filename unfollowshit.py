@@ -48,3 +48,5 @@ if following_number > 200:
         sleep(5)
 
     print("Done")
+
+driver.quit()
