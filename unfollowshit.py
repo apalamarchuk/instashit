@@ -32,7 +32,7 @@ feed_page = FeedPage(driver).goto_profile_page()
 profile_page = ProfilePage(driver)
 following_number = profile_page.get_following_number()
 print(following_number)
-following_list = profile_page.get_following_list(mysql_helper, 50)
+following_list = profile_page.get_following_list(mysql_helper, 200)
 print(len(following_list))
 print(following_list)
 
