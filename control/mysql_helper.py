@@ -10,6 +10,8 @@ class MySqlHelper(object):
     set_autoincrement_followers = 'ALTER TABLE followers_list AUTO_INCREMENT = 1;'
     insert_following = "INSERT INTO following_list(name) VALUE (%s);"
     insert_follower = "INSERT INTO followers_list(name) VALUE (%s);"
+    select = "SELECT * FROM default_list ORDER BY id;"
+
     __cursor = None
 
     def __init__(self):

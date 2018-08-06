@@ -12,4 +12,5 @@ class FeedPageObjRep(ObjectRepository):
     def __init__(self, driver, tag):
         super().__init__(driver)
         self.profile_link = Link(self.profile_link_xpath, driver)
-        self.search_input = Input(self.search_input_xpath, driver, tag)
+        if tag is not None:
+            self.search_input = Input(self.search_input_xpath, driver, tag)

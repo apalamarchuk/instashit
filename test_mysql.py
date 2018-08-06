@@ -15,14 +15,19 @@ first_attr = 'lol'
 second_attr = 'kek'
 test = 'https://www.instagram.com/happy_hostel_kiev/'
 
-cursor.execute(empty_table)
-cursor.execute(set_autoincrement)
-cursor.execute(insert, (first_attr, second_attr))
-cursor.execute(insert1, (test,))
+#cursor.execute(empty_table)
+#cursor.execute(set_autoincrement)
+#cursor.execute(insert, (first_attr, second_attr))
+#cursor.execute(insert1, (test,))
 cursor.execute(select)
 
+default_list = []
+
 for (id, name, time) in cursor:
+    default_list.append(name)
     print("{}    {}     {}".format(id, name, time))
+
+print(default_list)
 
 cursor.close()
 cnx.close()

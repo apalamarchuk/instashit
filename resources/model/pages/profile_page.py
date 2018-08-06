@@ -11,7 +11,7 @@ class ProfilePage(BasePage):
         super().__init__(driver, ProfilePageObjRep(driver))
 
     def get_following_number(self):
-        return self.object_rep.following_number.get_text()
+        return self.object_rep.following_number.get_text().replace(',', '')
 
     def get_followers_number(self):
         return self.object_rep.followers_number.get_text()
@@ -26,9 +26,12 @@ class ProfilePage(BasePage):
         self.object_rep.first_li.click()
         self.driver.execute_script("arguments[0].scrollTop = arguments[0].scrollHeight")
 
-    def get_following_list(self, mysql_helper):
-        default_list = set()
-        foll_num = int(self.get_following_number())
+    def get_following_list(self, mysql_helper, num=None):
+        default_list = []
+        if num is not None:
+            foll_num = num
+        else:
+            foll_num = int(self.get_following_number().replace(',', ''))
         self.open_following_list()
         self.object_rep.following_first_li.click()
         while self.object_rep.following_li_list.return_len() < foll_num:
@@ -41,7 +44,7 @@ class ProfilePage(BasePage):
             name = str(self.driver.find_element_by_xpath(self.object_rep.following_li_list_xpath + "[" + str(
                 i) + "]//a").get_attribute("href"))
             mysql_helper.add_to_default_list(name)
-            default_list.add(name)
+            default_list.append(name)
 
         return default_list
 

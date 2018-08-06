@@ -4,7 +4,7 @@ from resources.model.pages.feed_page_obj_rep import FeedPageObjRep
 
 class FeedPage(BasePage):
 
-    def __init__(self, driver, tag):
+    def __init__(self, driver, tag=None):
         super().__init__(driver, FeedPageObjRep(driver, tag))
         self.tag = tag
 
