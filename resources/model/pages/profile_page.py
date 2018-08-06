@@ -11,7 +11,7 @@ class ProfilePage(BasePage):
         super().__init__(driver, ProfilePageObjRep(driver))
 
     def get_following_number(self):
-        return self.object_rep.following_number.get_text().replace(',', '')
+        return int(self.object_rep.following_number.get_text().replace(',', ''))
 
     def get_followers_number(self):
         return self.object_rep.followers_number.get_text()
