@@ -32,7 +32,7 @@ feed_page = FeedPage(driver).goto_profile_page()
 profile_page = ProfilePage(driver)
 following_number = profile_page.get_following_number()
 print(following_number)
-following_list = profile_page.get_following_list(mysql_helper, 200)
+following_list = profile_page.get_following_list(mysql_helper, 50)
 print(len(following_list))
 print(following_list)
 
@@ -42,16 +42,15 @@ if following_number > 200:
         driver.get(link)
         sleep(1)
         driver.find_element_by_xpath('//button[text()="Following"]').click()
-        sleep(2)
+        sleep(1)
         driver.find_element_by_xpath('//button[text()="Unfollow"]').click()
-        sleep(2)
+        sleep(1)
         driver.refresh()
         if len(driver.find_elements_by_xpath('//button[text()="Following"]')) >= 1:
             print("Can't unfollow shit")
             print("Len is " + str(len(following_list)))
             driver.quit()
         following_list.remove(link)
-        sleep(2)
 
     print("Done")
 
