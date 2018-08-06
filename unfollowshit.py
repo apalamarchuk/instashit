@@ -48,9 +48,7 @@ if following_number > 200:
         driver.refresh()
         if len(driver.find_elements_by_xpath('//button[text()="Following"]')) >= 1:
             print("Can't unfollow this shit " + link)
-            driver.quit()
-            print(profile_page.get_following_number())
-            exit(0)
+            sleep(200)
         following_list.remove(link)
 
     print(profile_page.get_following_number())
