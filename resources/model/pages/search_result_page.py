@@ -20,9 +20,9 @@ class SearchResultPage(BasePage):
         for i in range(1, 50):
             sleep(1)
             self.driver.find_elements_by_xpath(self.object_rep.follow_button_xpath)[i].click()
-            name = str(self.driver.find_elements_by_xpath(
-                self.object_rep.follow_button_xpath + self.object_rep.follow_user_xpath)[i].get_attribute("href"))
-            #mysql_helper.add_to_following_list(name)
+            #name = str(self.driver.find_elements_by_xpath(
+            #    self.object_rep.follow_button_xpath + self.object_rep.follow_user_xpath)[i].get_attribute("href"))
+            # mysql_helper.add_to_following_list(name)
             if i % 3 == 0:
                 self.driver.switch_to.active_element.send_keys(Keys.PAGE_DOWN)
                 sleep(5)
