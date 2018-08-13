@@ -8,6 +8,7 @@ from resources.model.pages.object_rep import ObjectRepository
 class SearchResultObjRep(ObjectRepository):
     photo_link_xpath = '//h2[div]/following-sibling::div//a'
     likes_link_xpath = '//a[text() = " likes"]'
+    post_owner_follow_button = '//button[text()="Follow"]'
     first_user_li_xpath = '//div[div[text() = "Likes"]]//li[1]'
     follow_button_xpath = '//div[div[text() = "Likes"]]//button[text() = "Follow"]'
     follow_user_xpath = '/../../div/a'
