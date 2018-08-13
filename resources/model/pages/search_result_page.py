@@ -18,7 +18,6 @@ class SearchResultPage(BasePage):
         self.object_rep.likes_link.click()
         self.object_rep.first_user_li.click()
         shit_list = self.driver.find_elements_by_xpath(self.object_rep.follow_button_xpath)
-        print(shit_list)
         shit_name_list = self.driver.find_elements_by_xpath(
             self.object_rep.follow_button_xpath + self.object_rep.follow_user_xpath)
         for i in range(1, 50):
